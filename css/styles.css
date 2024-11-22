@@ -14,16 +14,20 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(217, 217, 217, 0.7);
+  backdrop-filter: blur(0.1px);
 }
 
 /* 프로필 카드 */
 .profile-card {
   background: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-  border-radius: 15px;
+  backdrop-filter: blur(0.1px);
+  padding: 24px 64px 64px;
+  border-radius: 10px;
   max-width: 800px;
+  max-height: 500px;
   width: 100%;
+  height: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -36,52 +40,76 @@ html {
 .profile-info {
   display: flex;
   align-items: center;
+  gap: 56px;
   margin-bottom: 20px;
 }
 
 .profile-image img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 16%;
   background: #ccc;
-}
-
-.profile-text {
-  margin-left: 20px;
 }
 
 .profile-text h2 {
   margin: 0;
+  align-self: stretch;
+  font-weight: 700;
   font-size: 1.5em;
   color: #333;
 }
 
 .profile-text p {
   margin: 10px 0 0;
+  align-self: stretch;
+  font-weight: 400;
   font-size: 1em;
+  line-height: 150%;
   color: #555;
 }
 
 /* 연락처 */
 .contact {
-  text-align: center;
-  margin: 20px 0;
+  text-align: left;
+  margin: 16px 0;
+}
+
+.contact p {
+  margin-bottom: 8px; /* "Contact me at:" 아래 간격 설정 */
 }
 
 .contact a {
   color: #007bff;
   text-decoration: none;
+  margin-right: 8px; /* 이메일과 전화번호 사이 간격 조정 */
 }
 
 .contact a:hover {
   text-decoration: underline;
 }
 
-/* 폼 스타일 */
+/* 폼 전체 */
 .contact-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr; /* 2열 레이아웃 */
+  gap: 20px; /* 항목 간 간격 */
+  width: 100%;
+}
+
+/* 각 항목 개별 스타일 */
+.contact-form #name {
+  grid-column: 1 / 2; /* 첫 번째 열에 배치 */
+  font-size: 1.1em; /* 폰트 크기 조정 */
+}
+
+.contact-form #email {
+  grid-column: 2 / 3; /* 두 번째 열에 배치 */
+  font-size: 1em; /* 폰트 크기 조정 */
+}
+
+.contact-form #message {
+  grid-column: span 2; /* 메시지 입력 창을 두 열에 걸쳐 배치 */
+  height: 60px; /* 메시지 입력 창 높이 */
 }
 
 .contact-form .form-group {
@@ -90,10 +118,11 @@ html {
 }
 
 .contact-form label {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
+/* 입력 필드와 메시지 창 */
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
@@ -101,10 +130,9 @@ html {
   border-radius: 5px;
   font-size: 1em;
   outline: none;
-}
-
-.contact-form textarea {
-  resize: none;
+  width: 100%; /* 각 열 꽉 채우게 */
+  box-sizing: border-box; /* 패딩 포함 크기 계산*/
+  resize: none; /* 사용자가 크기 임의 조정 못하게 */
 }
 
 .contact-form button {
