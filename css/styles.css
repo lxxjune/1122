@@ -14,17 +14,17 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgba(217, 217, 217, 0.7);
-  backdrop-filter: blur(0.1px);
+  background: rgba(217, 217, 217, 0.5);
+  backdrop-filter: blur(2px);
 }
 
 /* 프로필 카드 */
 .profile-card {
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(0.1px);
-  padding: 24px 64px 64px;
+  backdrop-filter: blur(2px);
+  padding: 24px 36px 64px;
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 764px;
   max-height: 500px;
   width: 100%;
   height: 100%;
@@ -40,8 +40,8 @@ html {
 .profile-info {
   display: flex;
   align-items: center;
-  gap: 56px;
-  margin-bottom: 20px;
+  gap: 40px;
+  margin-bottom: 24px;
 }
 
 .profile-image img {
@@ -71,7 +71,7 @@ html {
 /* 연락처 */
 .contact {
   text-align: left;
-  margin: 16px 0;
+  margin: 28px 0;
 }
 
 .contact p {
@@ -92,7 +92,7 @@ html {
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2열 레이아웃 */
-  gap: 20px; /* 항목 간 간격 */
+  gap: 16px 20px; /* 항목 간 간격 */
   width: 100%;
 }
 
@@ -136,8 +136,9 @@ html {
 }
 
 .contact-form button {
+  margin-top: 10px;
   grid-column: span 2;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background-color: #007bff;
   color: white;
   border: none;
